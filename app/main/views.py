@@ -10,3 +10,12 @@ def index():
     View root page function that returns the index page and its data
     '''
     return render_template('index.html')
+
+
+@app.route('/pitches')
+def pitches():
+
+    '''
+    View Pitch page function that returns the Pitch details page and its data
+    '''
+    return render_template('pitches.html', pitches=pitches)
