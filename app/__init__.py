@@ -13,6 +13,9 @@ login_manager.login_view = 'auth.login'
 bootstrap = Bootstrap()
 db = SQLAlchemy()
 
+
+FLASK_APP='app:create_app(config_name)'
+
 # Initializing application
 def create_app(config_name):
     app = Flask(__name__)
