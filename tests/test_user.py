@@ -1,5 +1,6 @@
 import unittest
-from app.models import User
+from app.models import User, Pitches
+from app import db
 
 class UserTest(unittest.TestCase):
     def setUp(self):
