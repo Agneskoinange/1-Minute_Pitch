@@ -33,7 +33,7 @@ def register():
         mail_message('Welcome to pitch', 'email/welcome_user', user.email, user=user)
         
         return redirect(url_for('auth.login'))
-        title = "New account"
+        title = "Create account"
     return render_template('auth/signup.html', signup_form=form)
 
 @auth.route('/logout')
