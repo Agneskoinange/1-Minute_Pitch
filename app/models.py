@@ -1,14 +1,17 @@
 from . import db
 from werkzeug.security import generate_password_hash,check_password_hash
+from flask_login import UserMixin
 
-class User(db.Model):
+class User(UserMixin, db.Model):
     __tablename__ = 'users'
     id = db.Column(db.Integer,primary_key = True)
     username = db.Column(db.String(255), unique=True, nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+    about = db.Column(db.String(255))
+    avatar = db.Column(db.String())
     
     password_encrypt=db.Column(db.String(128))
     
-
     @property   #write-only
     def password(self):
         raise AttributeError('You can only read this attribute')
