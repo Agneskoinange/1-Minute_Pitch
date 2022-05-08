@@ -4,6 +4,7 @@ from ..models import User
 from .forms import LoginForm, SignupForm
 from flask_login import login_user,logout_user,login_required
 from .. import db
+from ..email import mail_message
 
 @auth.route('/login', methods=['GET','POST'])
 def login():
@@ -26,11 +27,13 @@ def register():
     form = SignupForm()
     if form.validate_on_submit():
         user = User(username=form.username.data, email=form.email.data, password=form.password.data)
-        # db.session.add(user)
-        # db.session.commit()
-        # mail_message('Welcome to pitch', 'email/welcome_user', user.email, user=user)
-        # return redirect(url_for('auth.login'))
-        # title = "Create account"
+        db.session.add(user)
+        db.session.commit()
+
+        mail_message('Welcome to pitch', 'email/welcome_user', user.email, user=user)
+        
+        return redirect(url_for('auth.login'))
+        title = "New account"
     return render_template('auth/signup.html', signup_form=form)
 
 @auth.route('/logout')
