@@ -2,7 +2,7 @@ class Config:
     '''
     General configuration parent class
     '''
-    pass
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://nessie:agnes1234@localhost/watchlist'
 
 
 
@@ -25,3 +25,4 @@ class DevConfig(Config):
     '''
 
     DEBUG = True
+
