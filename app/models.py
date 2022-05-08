@@ -5,23 +5,25 @@ class User(db.Model):
     __tablename__ = 'users'
     id = db.Column(db.Integer,primary_key = True)
     username = db.Column(db.String(255), unique=True, nullable=False)
+    
+    password_encrypt=db.Column(db.String(128))
+    
+
+    @property   #write-only
+    def password(self):
+        raise AttributeError('You can only read this attribute')
+
+    @password.setter
+    def password(self, password):
+        self.password_encrypt = generate_password_hash(password)
+
+    def check_password(self, password):
+        return check_password_hash(self.password_encrypt, password)
 
     def __repr__(self):
         return f'User {self.username}'
 
-pass_secure  = db.Column(db.String(255))
-
-        @property
-        def password(self):
-            raise AttributeError('You cannot read the password attribute')
-
-        @password.setter
-        def password(self, password):
-            self.pass_secure = generate_password_hash(password)
-
-
-        def verify_password(self,password):
-            return check_password_hash(self.pass_secure,password)
+    
 
 
 class Pitches(db.Model):

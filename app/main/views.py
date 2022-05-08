@@ -1,6 +1,7 @@
 from flask import render_template
 from pip import main
 from app import app
+from flask_login import login_required
 
 # Views
 @main.route('/')
