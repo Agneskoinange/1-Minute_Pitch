@@ -1,0 +1,39 @@
+{% extends 'base.html' %} {% import 'bootstrap/wtf.html' as wtf %}
+
+<!-- head -->
+{% block title %} PITCH | Profile {% endblock %}
+
+
+<!-- content -->
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            {% if user.avatar %}
+            <img src="{{url_for('static',filename=user.avatar)}}" alt="" class="img-thumbnail"> {%else%}
+            <p>No profile picture</p>
+            {% endif %}
+
+            <h3> {{user.username| capitalize}} </h3>
+
+            <!--Displaying user bio-->
+            {% if user.about %}
+            <p> {{user.about}}</p>
+            {%else%}
+            <p> {{user.username| capitalize}} has no bio </p>
+            {% endif %}
+        </div>
+        <div class="offset-1 col-md-6">
+            <h3>Update my profile</h3>
+            <!-- form -->
+            {% if user == current_user %}
+            <form action="{{url_for('main.update_pic',name=user.username)}}" method="post" enctype="multipart/form-data">
+                <input type="file" name="photo" class="form-control" required>
+                <input type="submit">
+            </form>
+            {% endif %}
+            <br> {{wtf.quick_form(form)}}
+        </div>
+    </div>
+</div>
+{% endblock %}

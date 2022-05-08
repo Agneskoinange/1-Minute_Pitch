@@ -39,10 +39,10 @@ def profile(name):
     if user is None:
         abort(404)
 
-    form=EditProfile()
-    if form.validate_on_submit():
-        user.about=form.about.data
-        db.session.add(user)
-        db.session.commit()
-        return redirect(url_for('.profile', name=user.username))
-    return render_template('profile/profile.html', user=user, form=form)
+    # form=EditProfile()
+    # if form.validate_on_submit():
+    #     user.about=form.about.data
+    #     db.session.add(user)
+    #     db.session.commit()
+    #     return redirect(url_for('.profile', name=user.username))
+    return render_template('profile/profile.html', user=user )
