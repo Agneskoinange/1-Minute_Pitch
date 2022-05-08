@@ -25,13 +25,13 @@ def index():
 @main.route('/new_pitch', methods=['GET','POST'])
 @login_required
 def pitch_form():
-    # pitch_form = PitchForm()
+    pitch_form = PitchForm()
     if pitch_form.validate_on_submit():
         category=pitch_form.pitch_category.data
         text = pitch_form.pitch_text.data
         new_pitch = Pitches(category=category, text=text, user=current_user)
         new_pitch.save_pitch()
-        # return redirect(url_for('main.home'))
+        return redirect(url_for('index.home'))
     return render_template('new_pitch.html', pitch_form=pitch_form, )
 
 @main.route('/user/<name>', methods=['GET','POST'])
