@@ -44,7 +44,59 @@ class Pitches(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     category = db.Column(db.String(255))
     text = db.Column(db.String)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    posted = db.Column(db.DateTime, default=datetime.utcnow)
+    comments = db.relationship('Comments', backref='pitch', lazy='dynamic')
+    likes = db.relationship('UpVote', backref='pitch', lazy='dynamic')
+    
 
+    def save_pitch(self):
+        db.session.add(self)
+        db.session.commit()
+
+    @classmethod
+    def get_category(cls, category):
+        pitches = Pitches.query.filter_by(category=category).all()
+        return pitches
 
     def __repr__(self):
-        return f'User {self.username}'
+        return f'Pitches{self.text}'
+
+
+class UpVote(db.Model):
+    __tablename__ = 'likes'
+    id = db.Column(db.Integer,primary_key=True)
+    user_id = db.Column(db.Integer,db.ForeignKey('users.id'))
+    pitch_id = db.Column(db.Integer,db.ForeignKey('pitches.id'))
+
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
+
+    @classmethod
+    def get_upvotes(cls,id):
+        like = UpVote.query.filter_by(pitch_id=id).all()
+        return like
+
+    def __repr__(self):
+        return f'{self.user_id}:{self.pitch_id}'
+
+
+class Comments(db.Model):
+    __tablename__='comments'
+    id = db.Column(db.Integer, primary_key=True)
+    pitch_id = db.Column(db.Integer, db.ForeignKey('pitches.id'))
+    comment = db.Column(db.String(), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    
+    def save_comment(self):
+        db.session.add(self)
+        db.session.commit()
+
+    @classmethod
+    def get_comments(cls,pitch_id):
+        comments = Comments.query.filter_by(pitch_id=pitch_id)
+        return comments
+    
+    def __repr__(self):
+        return f'Comments:{self.comment}'
