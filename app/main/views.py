@@ -4,6 +4,8 @@ from pip import main
 from app import app
 from flask_login import current_user, login_required
 from ..models import User, Pitches
+from .forms import EditProfile, PitchForm, CommentForm
+from .. import db
 
 # Views
 @main.route('/')
