@@ -2,6 +2,7 @@ from . import db
 from werkzeug.security import generate_password_hash,check_password_hash
 from flask_login import UserMixin
 from . import login_manager
+from datetime import datetime
 
 
 @login_manager.user_loader
@@ -16,6 +17,10 @@ class User(UserMixin, db.Model):
     about = db.Column(db.String(255))
     avatar = db.Column(db.String())
     password_encrypt=db.Column(db.String(128))
+    pitches = db.relationship('Pitches', backref='user', lazy='dynamic')
+    likes = db.relationship('UpVote', backref='user', lazy='dynamic')
+    comments = db.relationship('Comments', backref='comments', lazy='dynamic')
+
     
     @property   #write-only
     def password(self):
