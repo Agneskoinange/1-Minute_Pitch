@@ -5,7 +5,7 @@ from app import app
 from flask_login import current_user, login_required
 from ..models import User, Pitches
 from .forms import EditProfile, PitchForm, CommentForm
-from .. import db
+from .. import db, photos
 
 # Views
 @main.route('/')
@@ -48,3 +48,14 @@ def profile(name):
         db.session.commit()
         return redirect(url_for('.profile', name=user.username))
     return render_template('profile/profile.html', user=user )
+
+@main.route('/user/<name>/edit/pic', methods=['POST'])
+@login_required
+def update_pic(name):
+    user=User.query.filter_by(username=name).first()
+    if 'photo' in request.files:
+        filename=photos.save(request.files['photo'])
+        path=f'photos/{filename}'
+        user.avatar=path
+        db.session.commit()
+    return redirect(url_for('main.profile', name=name))
