@@ -1,7 +1,8 @@
 from flask import Flask
-from config import DevConfig
 from flask_sqlalchemy import SQLAlchemy
 from flask_bootstrap import Bootstrap
+from config import DevConfig
+from config import config_options
 
 bootstrap = Bootstrap()
 db = SQLAlchemy()
@@ -30,4 +31,4 @@ def create_app(config_name):
 
     return app
 
-from app import views
+# from app import views
