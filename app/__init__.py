@@ -18,7 +18,7 @@ bootstrap = Bootstrap()
 db = SQLAlchemy()
 
 
-FLASK_APP='app:create_app(config_name)'
+
 
 photos = UploadSet('photos',IMAGES)
 
