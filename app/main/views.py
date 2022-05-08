@@ -6,6 +6,7 @@ from flask_login import current_user, login_required
 from ..models import User, Pitches
 from .forms import EditProfile, PitchForm, CommentForm
 from .. import db, photos
+import markdown2  
 
 # Views
 @main.route('/')
