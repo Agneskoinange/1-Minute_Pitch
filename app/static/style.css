@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Modak&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
+.navbar-brand {
+    font-family: 'Modak', cursive;
+    font-size: xx-large;
+    letter-spacing: 0.5rem;
+    font-style: italic;
+}
+
+body {
+    font-family: 'Kalam', cursive;
+    padding: 10px;
+}
+
+.container-fluid {
+    display: flex;
+    justify-content: space-between;
+}
+
+.col-md-7,
+.col-md-3 {
+    border: 2px solid black;
+}
+
+.col-md-7 {
+    width: 60%;
+    height: auto;
+}
+
+.col-md-3 {
+    width: 25%;
+    height: 70vh;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+.list-inline {
+    display: inline;
+}
