@@ -17,8 +17,6 @@ bootstrap = Bootstrap()
 db = SQLAlchemy()
 
 
-
-
 photos = UploadSet('photos',IMAGES)
 
 mail = Mail()

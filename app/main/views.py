@@ -1,5 +1,5 @@
 from flask import render_template,request,redirect,url_for,abort
-from pip import main
+from . import main
 # from app import app
 from flask_login import current_user, login_required
 from ..models import User, Pitches, Comments, UpVote
@@ -8,6 +8,7 @@ from .. import db, photos
 # import markdown2  
 
 # Views
+
 @main.route('/')
 def index():
 
