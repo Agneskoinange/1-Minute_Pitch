@@ -27,8 +27,8 @@ def register():
     form = SignupForm()
     if form.validate_on_submit():
         user = User(username=form.username.data, email=form.email.data, password=form.password.data)
-        db.session.add(user)
-        db.session.commit()
+        # db.session.add(user)
+        # db.session.commit()
 
         mail_message('Welcome to pitch', 'email/welcome_user', user.email, user=user)
         

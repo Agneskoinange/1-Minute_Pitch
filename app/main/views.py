@@ -45,8 +45,8 @@ def profile(name):
     form=EditProfile()
     if form.validate_on_submit():
         user.about=form.about.data
-        db.session.add(user)
-        db.session.commit()
+        # db.session.add(user)
+        # db.session.commit()
         return redirect(url_for('.profile', name=user.username))
     return render_template('profile/profile.html', user=user, form=form )
 
@@ -58,7 +58,7 @@ def update_pic(name):
         filename=photos.save(request.files['photo'])
         path=f'photos/{filename}'
         user.avatar=path
-        db.session.commit()
+        # db.session.commit()
     return redirect(url_for('main.profile', name=name))
 
 
