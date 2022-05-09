@@ -49,7 +49,6 @@ class Pitches(db.Model):
     comments = db.relationship('Comments', backref='pitch', lazy='dynamic')
     likes = db.relationship('UpVote', backref='pitch', lazy='dynamic')
     
-
     def save_pitch(self):
         db.session.add(self)
         db.session.commit()
