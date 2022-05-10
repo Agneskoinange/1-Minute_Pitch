@@ -1,6 +1,0 @@
-make --dry-run --always-make --keep-going --print-directory
-make: Entering directory '/home/nessie/1-Minute_Pitch'
-make: Leaving directory '/home/nessie/1-Minute_Pitch'
- 
-make: *** No targets.  Stop.
-
