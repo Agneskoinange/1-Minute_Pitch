@@ -3,7 +3,6 @@ from flask import render_template,request,redirect,url_for,abort
 from . import main
 # from app import app
 from flask_login import current_user, login_required
-
 from ..models import User, Pitches
 from ..models import User, Pitches, Comments, UpVote
 from .forms import EditProfile, PitchForm, CommentForm
