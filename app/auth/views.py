@@ -1,10 +1,11 @@
+from flask import render_template, redirect, url_for, flash, request
 from . import auth
-from flask import render_template,redirect,url_for, flash,request
+from .forms import SignupForm, LoginForm
 from ..models import User
-from .forms import LoginForm, SignupForm
-from flask_login import login_user,logout_user,login_required
 from .. import db
+from flask_login import login_user, logout_user, login_required
 from ..email import mail_message
+
 
 @auth.route('/login', methods=['GET','POST'])
 def login():
@@ -28,15 +29,14 @@ def register():
         user = User(username=form.username.data, email=form.email.data, password=form.password.data)
         db.session.add(user)
         db.session.commit()
-
         mail_message('Welcome to pitch', 'email/welcome_user', user.email, user=user)
-        
         return redirect(url_for('auth.login'))
         title = "Create account"
     return render_template('auth/signup.html', signup_form=form)
+
 
 @auth.route('/logout')
 @login_required
 def logout():
     logout_user()
-    return redirect(url_for("main.index"))
+    return redirect(url_for('main.home'))

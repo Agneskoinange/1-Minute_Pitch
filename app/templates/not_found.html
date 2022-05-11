@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+<!-- gif -->
+{% block title %} PITCH | Error {% endblock %}
+
+<!-- style -->
+{% block head%} {{ super() }}
+<style>
+    body {
+        background: url('/static/img/404.gif');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;
+    }
+</style>
+{% endblock %}

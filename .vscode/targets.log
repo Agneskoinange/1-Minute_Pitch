@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue May 10 14:46:42 2022
+# Make data base, printed on Wed May 11 01:46:38 2022
 
 # Variables
 
@@ -47,13 +47,13 @@ CURDIR := /home/nessie/1-Minute_Pitch
 # makefile
 SHELL = /bin/sh
 # environment
-SNAP_DATA = /var/snap/code/95
+SNAP_DATA = /var/snap/code/96
 # environment
 VTE_VERSION = 6003
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:38440
+JOURNAL_STREAM = 8:38297
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # environment
@@ -77,7 +77,7 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-MANAGERPID = 1009
+MANAGERPID = 1005
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -85,7 +85,7 @@ LC_NAME = en_US.UTF-8
 # environment
 VSCODE_CWD = /home/nessie/1-Minute_Pitch
 # environment
-GSETTINGS_SCHEMA_DIR = /snap/code/95/usr/share/glib-2.0/schemas
+GSETTINGS_SCHEMA_DIR = /snap/code/96/usr/share/glib-2.0/schemas
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
@@ -93,15 +93,15 @@ PATH = /home/nessie/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/nessie-VivoBook-ASUSLaptop-X512UA:@/tmp/.ICE-unix/1334,unix/nessie-VivoBook-ASUSLaptop-X512UA:/tmp/.ICE-unix/1334
+SESSION_MANAGER = local/nessie-VivoBook-ASUSLaptop-X512UA:@/tmp/.ICE-unix/1329,unix/nessie-VivoBook-ASUSLaptop-X512UA:/tmp/.ICE-unix/1329
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
 GDK_PIXBUF_MODULE_FILE = /home/nessie/snap/code/common/.cache/gdk-pixbuf-loaders.cache
 # environment
-SNAP = /snap/code/95
+SNAP = /snap/code/96
 # environment
-SNAP_VERSION = 57fd6d01
+SNAP_VERSION = da15b6fd
 # environment
 XDG_MENU_PREFIX = gnome-
 # environment
@@ -111,9 +111,9 @@ DISABLE_WAYLAND = 1
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 28f5ad581800409cab8588005dcc17c7
+INVOCATION_ID = 56a6ff5aa8894620a4bb5c20b1455912
 # environment
-GDK_PIXBUF_MODULEDIR = /snap/code/95/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
+GDK_PIXBUF_MODULEDIR = /snap/code/96/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -135,7 +135,7 @@ PWD = /home/nessie/1-Minute_Pitch
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1295
+SSH_AGENT_PID = 1278
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -149,7 +149,7 @@ LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
 VSCODE_CLI = 1
 # environment
-VSCODE_CODE_CACHE_PATH = /home/nessie/.config/Code/CachedData/57fd6d0195bb9b9d1b49f6da5db789060795de47
+VSCODE_CODE_CACHE_PATH = /home/nessie/.config/Code/CachedData/da15b6fd3ef856477bf6f4fb29ba1b7af717770d
 # environment
 LOGNAME = nessie
 # environment
@@ -185,19 +185,19 @@ MAKECMDGOALS := all
 # environment
 QT_IM_MODULE = ibus
 # environment
-SNAP_USER_DATA = /home/nessie/snap/code/95
+SNAP_USER_DATA = /home/nessie/snap/code/96
 # environment
 SHLVL = 1
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-f892013c-ca27-4a22-8b86-f5c1a11321f4.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-6e7275c4-2b9c-4246-bd4e-78eeb5d051e6.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
 USER = nessie
 # environment
-SNAP_REVISION = 95
+SNAP_REVISION = 96
 # environment
 LC_MONETARY = en_US.UTF-8
 # makefile
@@ -210,6 +210,8 @@ XDG_CURRENT_DESKTOP = Unity
 LC_TELEPHONE = en_US.UTF-8
 # default
 MAKE_COMMAND := make
+# environment
+OLDPWD = /home/nessie
 # default
 .VARIABLES := 
 # automatic
@@ -217,7 +219,7 @@ MAKE_COMMAND := make
 # environment
 LANGUAGE = en_US:en
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-7768e6d4-1.67.0-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-7768e6d4-1.67.1-main.sock
 # makefile
 MAKEFLAGS = pqrR
 # environment
@@ -253,11 +255,11 @@ LC_ALL = C
 # environment
 GJS_DEBUG_TOPICS = JS ERROR;JS LOG
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/667aae3a_7898_41a1_884d_f8f544db28ae
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/7f3e7dca_6009_4530_aeae_03ee387e0994
 # automatic
 ^F = $(notdir $^)
 # environment
-GNOME_TERMINAL_SERVICE = :1.2692
+GNOME_TERMINAL_SERVICE = :1.256
 # default
 SUFFIXES := 
 # environment
@@ -278,23 +280,23 @@ LC_ADDRESS = en_US.UTF-8
 LANG = C
 # environment
 TERM = xterm-256color
+ 
 # environment
-VSCODE_PID = 44628
+VSCODE_PID = 5193
 # environment
 NVM_RC_VERSION = 
 # variable set hash-table stats:
-# Load=135/1024=13%, Rehash=0, Collisions=20/160=12%
+# Load=136/1024=13%, Rehash=0, Collisions=20/161=12%
 
 # Pattern-specific Variable Values
 
 # No pattern-specific variable values.
 
 # Directories
- 
 
-# . (device 2055, inode 3155132): 13 files, no impossibilities.
+# . (device 2055, inode 3155132): 15 files, no impossibilities.
 
-# 13 files, no impossibilities in 1 directories.
+# 15 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -351,12 +353,12 @@ migrations:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 21 / storage = 174 B / avg = 8 B
-# current buf: size = 8162 B / used = 174 B / count = 21 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 22 / storage = 186 B / avg = 8 B
+# current buf: size = 8162 B / used = 186 B / count = 22 / avg = 8 B
 
-# strcache performance: lookups = 28 / hit rate = 25%
+# strcache performance: lookups = 30 / hit rate = 26%
 # hash-table stats:
-# Load=21/8192=0%, Rehash=0, Collisions=1/28=4%
-# Finished Make data base on Tue May 10 14:46:42 2022
+# Load=22/8192=0%, Rehash=0, Collisions=1/30=3%
+# Finished Make data base on Wed May 11 01:46:38 2022
 
  

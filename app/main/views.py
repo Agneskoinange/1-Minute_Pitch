@@ -1,7 +1,10 @@
+from app import app
 from flask import render_template,request,redirect,url_for,abort
 from . import main
 # from app import app
 from flask_login import current_user, login_required
+
+from ..models import User, Pitches
 from ..models import User, Pitches, Comments, UpVote
 from .forms import EditProfile, PitchForm, CommentForm
 from .. import db, photos
@@ -10,17 +13,17 @@ from .. import db, photos
 # Views
 
 @main.route('/')
-def index():
+def home():
 
     '''
-    View root page function that returns the index page and its data
+    View root page function that returns the home page and its data
     '''
     pitches=Pitches.query.all()
     identification = Pitches.user_id
     posted_by = User.query.filter_by(id=identification).first()
     user = User.query.filter_by(id=current_user.get_id()).first()
 
-    return render_template('index.html', pitches=pitches, posted_by=posted_by, user=user)
+    return render_template('pitches.html', pitches=pitches, posted_by=posted_by, user=user)
 
 
 @main.route('/new_pitch', methods=['GET','POST'])
@@ -32,7 +35,7 @@ def pitch_form():
         text = pitch_form.pitch_text.data
         new_pitch = Pitches(category=category, text=text, user=current_user)
         new_pitch.save_pitch()
-        return redirect(url_for('index.home'))
+        return redirect(url_for('main.home'))
     return render_template('new_pitch.html', pitch_form=pitch_form, )
 
 @main.route('/user/<name>', methods=['GET','POST'])
@@ -88,4 +91,3 @@ def pitch_comments(pitch_id):
         return redirect(url_for('main.pitch_comments',pitch_id = pitch_id))
 
     return render_template('comments.html', comment_form=form, comments=comments, pitch = pitch, user=user)
-
