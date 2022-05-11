@@ -11,22 +11,8 @@ class Config:
     # SECRET_KEY = os.environ.get('SECRET_KEY')
     UPLOADED_PHOTOS_DEST ='app/static/photos'
     SQLALCHEMY_TRACK_MODIFICATIONS='False'
-
-    SQLALCHEMY_DATABASE_URI = "sqlite:///pitches.db"
-    # SQLALCHEMY_ENGINE_OPTIONS = {
-    #     'pool_size': 1
-    # }
-
-    # SQLALCHEMY_BINDS = {
-    #     'db1': 'sqlalchemy://...'
-
-    #     'db2': 'sqlalchemy://...'
-    # }
     
-    # SQLALCHEMY_BINDS_ENGINE_OPTIONS = {
-    #     'db1': {'pool_size': 0}, # engine_options for 'db1' 
-    #     'db2': {'pool_size': 0} # engine_options for 'db2' 
-    # }
+    SQLALCHEMY_DATABASE_URI = "sqlite:///pitches.db"
 
     # email configurations
     MAIL_SERVER = 'smtp.googlemail.com'
