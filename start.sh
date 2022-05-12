@@ -5,10 +5,11 @@ export MAIL_PASSWORD='0708042343'
 export FLASK_APP='manage.py'
 # export FLASK_APP = "manage.py"
 # export APP_SETTINGS="development"
-export SQLALCHEMY_DATABASE_URL = os.getenv('DATABASE_URL')
+# export SQLALCHEMY_DATABASE_URL=os.getenv('DATABASE_URL')
 export SQLALCHEMY_TRACK_MODIFICATIONS='False'
-export SECRET_KEY = 'agnes1234'
+export SECRET_KEY='agnes1234'
 
-
+# export PYTHONHOME="/Users/nessie/postgres/"
+# export PYTHONPATH="${PYTHONHOME}/bin"
 
 python3 manage.py server
