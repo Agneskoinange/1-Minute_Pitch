@@ -1,12 +1,12 @@
 import os 
-basedir = os.path.abspath(os.path.dirname(__file__))
+# basedir = os.path.abspath(os.path.dirname(__file__))
 
 class Config:
     '''
     General configuration parent class
     '''
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
-        'sqlite:///' + os.path.join(basedir, 'pitches.db')
+    # SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
+    #     'sqlite:///' + os.path.join(basedir, 'pitches.db')
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://nessie:agnes1234@localhost/pitches'
     # SECRET_KEY = os.environ.get('SECRET_KEY')
     UPLOADED_PHOTOS_DEST ='app/static/photos'
