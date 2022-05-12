@@ -5,6 +5,8 @@ class Config:
     '''
     General configuration parent class
     '''
+    engine = 'create_engine("mysql+pymysql://nessie:agnes1234@host/pitches", pool_pre_ping=True)'
+
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
         'sqlite:///' + os.path.join(basedir, 'pitches.db')
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://nessie:agnes1234@localhost:5432/pitches'
