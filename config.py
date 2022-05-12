@@ -5,11 +5,9 @@ class Config:
     '''
     General configuration parent class
     '''
-    engine = 'create_engine("mysql+pymysql://nessie:agnes1234@host/pitches", pool_pre_ping=True)'
-
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
         'sqlite:///' + os.path.join(basedir, 'pitches.db')
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://nessie:agnes1234@localhost:5433/pitches'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://nessie:agnes1234@localhost/pitches'
     # SECRET_KEY = os.environ.get('SECRET_KEY')
     UPLOADED_PHOTOS_DEST ='app/static/photos'
     SQLALCHEMY_TRACK_MODIFICATIONS='False'
@@ -26,11 +24,16 @@ class Config:
    
 
 class ProdConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql://jgbetxmkvvikpw:ef629107762c977b21d83ed5a1c99eb58bb3186414c89b5859e51de848873396@ec2-54-164-40-66.compute-1.amazonaws.com:5432/d7rq7smbhqekdr'
-    pass
+    '''
+    Production  configuration child class
+    Args:
+        Config: The parent configuration class with General configuration settings
+    '''
+    SQLALCHEMY_DATABASE_URI=os.environ.get('SQLALCHEMY_DATABASE_URI')
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
 
-# class TestConfig(Config):
-#     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://nessie:agnes1234@localhost:5432/pitches_test'
+class TestConfig(Config):
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://nessie:agnes1234@localhost/pitches_test'
 
 
 class DevConfig(Config):
@@ -41,5 +44,5 @@ class DevConfig(Config):
 config_options = {
 'development':DevConfig,
 'production':ProdConfig,
-# 'test':TestConfig
+'test':TestConfig
 }
