@@ -3,7 +3,7 @@ from flask import render_template,request,redirect,url_for,abort
 from . import main
 # from app import app
 from flask_login import current_user, login_required
-from ..models import User, Pitches, Comments
+from ..models import User, Pitches, Comments, UpVote, DownVote
 from .forms import EditProfile, PitchForm, CommentForm
 from .. import db, photos
 # import markdown2  
@@ -89,3 +89,35 @@ def pitch_comments(pitch_id):
         return redirect(url_for('main.pitch_comments',pitch_id = pitch_id))
 
     return render_template('comments.html', comment_form=form, comments=comments, pitch = pitch, user=user)
+
+@main.route('/like/<int:id>',methods = ['POST','GET'])
+@login_required
+def like(id):
+    get_pitches = UpVote.get_likes(id)
+    valid_string = f'{current_user.id}:{id}'
+    for pitch in get_pitches:
+        to_str = f'{pitch}'
+        print(valid_string+" "+to_str)
+        if valid_string == to_str:
+            return redirect(url_for('main.home',id=id))
+        else:
+            continue
+    new_like = UpVote(user = current_user, pitch_id=id)
+    new_like.save()
+    return redirect(url_for('main.home',id=id))
+
+@main.route('/dislike/<int:id>',methods = ['POST','GET'])
+@login_required
+def dislike(id):
+    pitch = DownVote.get_dislikes(id)
+    valid_string = f'{current_user.id}:{id}'
+    for p in pitch:
+        to_str = f'{p}'
+        print(valid_string+" "+to_str)
+        if valid_string == to_str:
+            return redirect(url_for('main.home',id=id))
+        else:
+            continue
+    new_dislike = DownVote(user = current_user, pitch_id=id)
+    new_dislike.save()
+    return redirect(url_for('main.home',id = id))

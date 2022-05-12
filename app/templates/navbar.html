@@ -21,23 +21,27 @@
                     </div>
                     </div>
                 </li>
+               
+            </ul>
+
+            <div style="padding-left: 550px ;">
                 {% if current_user.is_authenticated %}
-                <li class="nav-item">
+                <div class="nav-item">
                     <a class="nav-link text-dark" href="{{url_for('main.profile',name=current_user.username)}}">
                         <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
                         </svg>{{current_user.username}}
                     </a>
-                </li>
-                <li class="nav-item">
+                </div>
+                <div class="nav-item">
                     <a class="nav-link text-dark" href="{{url_for('auth.logout')}}">Log out</a>
-                </li>
+                </div>
                 {% else %}
-                <li class="nav-item">
+                <div class="nav-item">
                     <a class="nav-link text-dark" href="{{url_for('auth.login')}}">Sign in</a>
-                </li>
+                </div>
                 {% endif %}
-            </ul>
+            </div>
         </div>
     </nav>
 </div>
