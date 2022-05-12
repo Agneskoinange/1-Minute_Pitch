@@ -3,13 +3,10 @@
 {% block content %}
 <div class="container">
   <div class="row">
-    <div class="col-md-3">
-            
-    </div>
-    <div class=" col-md-9 card horizontal p-2" style="display: flex;">
+    <div class=" card horizontal p-2" style="display: flex;">
     {% if pitch %} {%for item in pitch %}
     <h4 class="card-title">Category: {{item.category}} </h4>
-    <div class=" card horizontal p-2">
+    <div class=" card col-md-5  m-2 p-2" style="display:inline-block; flex-wrap:wrap; box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3); ">
         <div class="card-stacked">
             <div class="card-content">
                 <p class="text-right text-capitalize">

@@ -7,23 +7,38 @@
     font-style: italic;
 }
 
-body {
-    background-color: blueviolet;
-    font-family: 'Kalam', cursive;
-    padding: 10px;
+#bg { 
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; 
+  display: flex; 
+  /* flex-direction: column;  */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  font-weight: bold;
 }
 
+body {
+    /* background-image: url({url_for'static', filename='/app/static/img/sea.jpg')} */
+    /* background-color: blueviolet; */
+    font-family: 'Kalam', cursive;
+    padding: 10px; 
+}
+/* 
 .container-fluid {
     display: flex;
     justify-content: space-between;
-}
+} */
 
-.col-md-7,
+.col-md-8,
 .col-md-3 {
     border: 2px solid black;
 }
 
-.col-md-7 {
+.col-md-8 {
     width: 60%;
     height: auto;
 }
@@ -38,4 +53,4 @@ body {
 
 .list-inline {
     display: inline;
-}
+} 

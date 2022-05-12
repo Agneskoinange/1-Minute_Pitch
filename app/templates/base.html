@@ -7,6 +7,7 @@
 
     <!-- add style and title tag -->
     {% block head %}
+  
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title> {% block title %} {% endblock %} PITCH </title>
@@ -16,10 +17,10 @@
     }
     </style>
     {% endblock %}
-
+    
 </head>
 
-<body>
+<body id= bg style="background-image: url('static/img/sea.jpg')">
     
 
     <!-- Navbar block  --> 
