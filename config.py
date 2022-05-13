@@ -7,10 +7,12 @@ class Config:
     '''
     # SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
     #     'sqlite:///' + os.path.join(basedir, 'pitches.db')
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://nessie:agnes1234@localhost/pitches'
+    # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://nessie:agnes1234@localhost/pitches'
     # SECRET_KEY = os.environ.get('SECRET_KEY')
+    SECRET_KEY = os.environ.get('SECRET_KEY')
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
     UPLOADED_PHOTOS_DEST ='app/static/photos'
-    SQLALCHEMY_TRACK_MODIFICATIONS='False'
+    SQLALCHEMY_TRACK_MODIFICATIONS=False
     
     SQLALCHEMY_DATABASE_URI = "sqlite:///pitches.db"
 
@@ -24,14 +26,13 @@ class Config:
    
 
 class ProdConfig(Config):
-    '''
-    Production  configuration child class
-    Args:
-        Config: The parent configuration class with General configuration settings
-    '''
+    # DATABASE_URL = os.environ.get("DATABASE_URL")
+    # if DATABASE_URL.startswith('postgres://'):
+    #     SQLALCHEMY_DATABASE_URI=DATABASE_URL.replace('postgres://','postgresql://',1)
+    # else:
+    #     SQLALCHEMY_DATABASE_URI=DATABASE_URL
     SQLALCHEMY_DATABASE_URI=os.environ.get('SQLALCHEMY_DATABASE_URI')
     SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://nessie:agnes1234@localhost/pitches'
 
 class TestConfig(Config):
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://nessie:agnes1234@localhost/pitches_test'
