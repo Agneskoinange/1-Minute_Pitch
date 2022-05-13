@@ -9,7 +9,8 @@ export FLASK_APP='manage.py'
 export SQLALCHEMY_TRACK_MODIFICATIONS='False'
 export SECRET_KEY='agnes1234'
 
-# export PYTHONHOME="/Users/nessie/postgres/"
+# export PYTHONHOME="/home/nessie/.local/lib/python3.8"
 # export PYTHONPATH="${PYTHONHOME}/bin"
+# ./configure --prefix='/home/nessie/.local'
 
-python3 manage.py server
+python3.8 manage.py server

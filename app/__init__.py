@@ -49,6 +49,7 @@ def create_app(config_name):
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = 'False'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://nessie:agnes1234@localhost/pitches'
     app.config["SECRET_KEY"] = 'agnes1234'
+   
 
     # configure UploadSet
     configure_uploads(app,photos)
