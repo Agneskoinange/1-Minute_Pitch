@@ -2,6 +2,7 @@ from app import create_app, db
 from app.models import Comments, Pitches, UpVote, User
 from flask_script import Manager, Server
 from flask_migrate import Migrate, MigrateCommand
+from app import models
 
 
 #createapp instance
