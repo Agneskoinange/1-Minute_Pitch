@@ -13,7 +13,6 @@ class Config:
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
     UPLOADED_PHOTOS_DEST ='app/static/photos'
     SQLALCHEMY_TRACK_MODIFICATIONS=False
-    
     SQLALCHEMY_DATABASE_URI = "sqlite:///pitches.db"
 
     # email configurations
