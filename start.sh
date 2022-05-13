@@ -7,7 +7,7 @@ export FLASK_APP='manage.py'
 # export APP_SETTINGS="development"
 # export SQLALCHEMY_DATABASE_URL=os.getenv('DATABASE_URL')
 export SQLALCHEMY_TRACK_MODIFICATIONS='False'
-export SECRET_KEY='agnes1234'
+export SECRET_KEY='agnes12345'
 
 # export PYTHONHOME="/home/nessie/.local/lib/python3.8"
 # export PYTHONPATH="${PYTHONHOME}/bin"
