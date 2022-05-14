@@ -9,19 +9,19 @@ class Config:
     #     'sqlite:///' + os.path.join(basedir, 'pitches.db')
     # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://nessie:agnes1234@localhost/pitches'
     # SECRET_KEY = os.environ.get('SECRET_KEY')
-    SECRET_KEY = os.environ.get('SECRET_KEY')
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
-    UPLOADED_PHOTOS_DEST ='app/static/photos'
+    SECRET_KEY = os.environ.get("SECRET_KEY'")
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
+    UPLOADED_PHOTOS_DEST ="app/static/photos"
     SQLALCHEMY_TRACK_MODIFICATIONS=False
     # SQLALCHEMY_DATABASE_URI = "sqlite:///pitches.db"
 
     # email configurations
-    MAIL_SERVER = 'smtp.googlemail.com'
+    MAIL_SERVER = "smtp.googlemail.com"
     MAIL_PORT = 587
     MAIL_USE_TLS = True
     MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
-    SQLALCHEMY_DATABASE_URI=os.environ.get('SQLALCHEMY_DATABASE_URI')
+    SQLALCHEMY_DATABASE_URI=os.environ.get("SQLALCHEMY_DATABASE_URI")
 
    
 
@@ -40,7 +40,7 @@ class Config:
 
 class DevConfig(Config):
     
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://nessie:agnes1234@localhost/pitches'
+    SQLALCHEMY_DATABASE_URI = "postgresql+psycopg2://nessie:agnes1234@localhost:5432/pitches"
     DEBUG = True
     
 config_options = {

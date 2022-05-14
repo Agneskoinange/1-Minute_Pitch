@@ -15,7 +15,7 @@ login_manager.session_protection = 'string'
 login_manager.login_view = 'auth.login'
 bootstrap = Bootstrap()
 # app.config.from_object(Config)
-db = SQLAlchemy(app)
+db = SQLAlchemy()
 photos = UploadSet('photos',IMAGES)
 mail = Mail()
 
