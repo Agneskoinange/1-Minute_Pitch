@@ -27,10 +27,9 @@ def create_app(config_name):
     # Initializing flask extensions
     bootstrap.init_app(app)
     db.init_app(app)
-    # db.init_app(app)
     login_manager.init_app(app)
     mail.init_app(app)
-    # simple.init_app(app)
+   
 
 
     # Registering the blueprint
@@ -47,7 +46,7 @@ def create_app(config_name):
     app.config.from_object(config_options[config_name])
     app.config['SQLALCHEMY_DATABASE_URL'] = os.getenv('DATABASE_URL')
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = 'False'
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://nessie:agnes1234@localhost:5432/pitches'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://nessie:agnes1234@localhost/pitches'
     app.config["SECRET_KEY"] = 'agnes12345'
    
 
@@ -57,4 +56,3 @@ def create_app(config_name):
 
     return app
 
-# from app import views

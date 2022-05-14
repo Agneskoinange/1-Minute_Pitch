@@ -13,7 +13,7 @@ class Config:
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
     UPLOADED_PHOTOS_DEST ='app/static/photos'
     SQLALCHEMY_TRACK_MODIFICATIONS=False
-    SQLALCHEMY_DATABASE_URI = "sqlite:///pitches.db"
+    # SQLALCHEMY_DATABASE_URI = "sqlite:///pitches.db"
 
     # email configurations
     MAIL_SERVER = 'smtp.googlemail.com'
@@ -21,29 +21,30 @@ class Config:
     MAIL_USE_TLS = True
     MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
+    SQLALCHEMY_DATABASE_URI=os.environ.get('SQLALCHEMY_DATABASE_URI')
 
    
 
-class ProdConfig(Config):
+# class ProdConfig(Config):
     # DATABASE_URL = os.environ.get("DATABASE_URL")
     # if DATABASE_URL.startswith('postgres://'):
     #     SQLALCHEMY_DATABASE_URI=DATABASE_URL.replace('postgres://','postgresql://',1)
     # else:
     #     SQLALCHEMY_DATABASE_URI=DATABASE_URL
-    SQLALCHEMY_DATABASE_URI=os.environ.get('SQLALCHEMY_DATABASE_URI')
-    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
+    # SQLALCHEMY_DATABASE_URI=os.environ.get('SQLALCHEMY_DATABASE_URI')
+    # SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
 
-class TestConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://nessie:agnes1234@localhost:5432/pitches_test'
+# class TestConfig(Config):
+#     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://nessie:agnes1234@localhost:5432/pitches_test'
 
 
 class DevConfig(Config):
     
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://nessie:agnes1234@localhost:5432/pitches'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://nessie:agnes1234@localhost/pitches'
     DEBUG = True
     
 config_options = {
 'development':DevConfig,
-'production':ProdConfig,
-'test':TestConfig
+# 'production':ProdConfig,
+# 'test':TestConfig
 }
