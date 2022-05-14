@@ -13,12 +13,17 @@ class Config:
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
  
    
-# class ProdConfig(Config):
-#     DATABASE_URL = os.environ.get("DATABASE_URL")
-#     if DATABASE_URL.startswith('postgres://'):
-#     QLALCHEMY_DATABASE_URI=DATABASE_URL.replace('postgres://','postgresql://',1)
-#     else:
-#         SQLALCHEMY_DATABASE_URI=DATABASE_URL
+class ProdConfig(Config):
+    # DATABASE_URL = os.environ.get("DATABASE_URL")
+    # if DATABASE_URL.startswith('postgres://'):
+    # QLALCHEMY_DATABASE_URI=DATABASE_URL.replace('postgres://','postgresql://',1)
+    # else:
+    #     SQLALCHEMY_DATABASE_URI=DATABASE_URL
+
+    uri = os.getenv('DATABASE_URL')
+    if uri and uri.startswith('postgres://'):
+        uri = uri.replace('postgres://', 'postgresql://', 1)
+    SQLALCHEMY_DATABASE_URI = uri
 
 class DevConfig(Config):
     SQLALCHEMY_DATABASE_URI = "postgresql+psycopg2://nessie:agnes1234@localhost/watchlist"
@@ -26,5 +31,5 @@ class DevConfig(Config):
     
 config_options = {
 'development':DevConfig,
-# 'production':ProdConfig,
+'production':ProdConfig,
 }
