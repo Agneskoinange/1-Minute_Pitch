@@ -1,7 +1,7 @@
 import os 
 
-
 class Config:
+    # SQLALCHEMY_DATABASE_URI = "postgresql+psycopg2://nessie:agnes1234@localhost/watchlist"
     SECRET_KEY = os.environ.get("SECRET_KEY'")
     SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
     UPLOADED_PHOTOS_DEST ="app/static/photos"
@@ -11,20 +11,20 @@ class Config:
     MAIL_USE_TLS = True
     MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
-    SQLALCHEMY_DATABASE_URI=os.environ.get("SQLALCHEMY_DATABASE_URI")
-
+ 
    
-
-class ProdConfig(Config):
-    pass
+# class ProdConfig(Config):
+#     DATABASE_URL = os.environ.get("DATABASE_URL")
+#     if DATABASE_URL.startswith('postgres://'):
+#     QLALCHEMY_DATABASE_URI=DATABASE_URL.replace('postgres://','postgresql://',1)
+#     else:
+#         SQLALCHEMY_DATABASE_URI=DATABASE_URL
 
 class DevConfig(Config):
-    
-    SQLALCHEMY_DATABASE_URI = "postgresql+psycopg2://nessie:agnes1234@localhost:5432/watchlist"
+    SQLALCHEMY_DATABASE_URI = "postgresql+psycopg2://nessie:agnes1234@localhost/watchlist"
     DEBUG = True
     
 config_options = {
 'development':DevConfig,
-'production':ProdConfig,
-# 'test':TestConfig
+# 'production':ProdConfig,
 }
