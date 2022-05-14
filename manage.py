@@ -4,11 +4,10 @@ from flask_script import Manager, Server
 from flask_migrate import Migrate, MigrateCommand
 from app import models
 
-
 #createapp instance
-app = create_app('production')
+# app = create_app('development')
 # app = create_app('test')
-# app = create_app('production')
+app = create_app('production')
 
 manager = Manager(app)
 manager.add_command('server', Server)
@@ -28,3 +27,4 @@ def make_shell_context():
 if __name__ == '__main__':
     app.config['SECRET_KEY']="agnes12345"
     manager.run()
+    
