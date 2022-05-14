@@ -26,4 +26,5 @@ def make_shell_context():
     return dict(app=app, db=db, User=User, Pitches=Pitches, Comments=Comments, UpVote=UpVote, DownVote=DownVote)
 
 if __name__ == '__main__':
+    app.config['SECRET_KEY']="agnes12345"
     manager.run()
