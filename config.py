@@ -21,6 +21,7 @@ class ProdConfig(Config):
     # else:
     #     SQLALCHEMY_DATABASE_URI=DATABASE_URL
     SQLALCHEMY_DATABASE_URI = "postgresql+psycopg2://nessie:agnes1234@localhost/pitch"
+    
     uri = os.getenv('DATABASE_URL')
     if uri and uri.startswith('postgres://'):
         uri = uri.replace('postgres://', 'postgresql://', 1)
