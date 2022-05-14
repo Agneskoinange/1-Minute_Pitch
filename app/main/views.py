@@ -121,3 +121,4 @@ def dislike(id):
     new_dislike = DownVote(user = current_user, pitch_id=id)
     new_dislike.save()
     return redirect(url_for('main.home',id = id))
+
