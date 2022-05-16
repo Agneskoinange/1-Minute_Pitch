@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri May 13 15:30:16 2022
+# Make data base, printed on Mon May 16 10:37:19 2022
 
 # Variables
 
@@ -53,7 +53,7 @@ VTE_VERSION = 6003
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:36719
+JOURNAL_STREAM = 8:37814
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # environment
@@ -67,6 +67,8 @@ MAKEFILE_LIST :=  makefile
 # environment
 IM_CONFIG_PHASE = 1
 # environment
+QT_IM_MODULE = ibus
+# environment
 USERNAME = nessie
 # environment
 MAKELEVEL := 0
@@ -77,7 +79,7 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-MANAGERPID = 995
+MANAGERPID = 1001
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -93,7 +95,7 @@ PATH = /home/nessie/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/nessie-VivoBook-ASUSLaptop-X512UA:@/tmp/.ICE-unix/1319,unix/nessie-VivoBook-ASUSLaptop-X512UA:/tmp/.ICE-unix/1319
+SESSION_MANAGER = local/nessie-VivoBook-ASUSLaptop-X512UA:@/tmp/.ICE-unix/1336,unix/nessie-VivoBook-ASUSLaptop-X512UA:/tmp/.ICE-unix/1336
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -111,7 +113,7 @@ DISABLE_WAYLAND = 1
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 6e767f5ea64440789be335a07af38d68
+INVOCATION_ID = b0d62f6fbcff4f638dbdfa39b45e9ff2
 # environment
 GDK_PIXBUF_MODULEDIR = /snap/code/96/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # default
@@ -135,7 +137,7 @@ PWD = /home/nessie/1-Minute_Pitch
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1271
+SSH_AGENT_PID = 1295
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -183,7 +185,7 @@ MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # environment
-QT_IM_MODULE = ibus
+VIRTUAL_ENV = /home/nessie/Blog-posts/virtual
 # environment
 SNAP_USER_DATA = /home/nessie/snap/code/96
 # environment
@@ -191,7 +193,7 @@ SHLVL = 1
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-48408535-8170-4dc1-9bc6-a82ff8f93070.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-f672b1b9-ad60-46f8-96a2-7fc40718c93b.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -235,6 +237,8 @@ GDK_BACKEND = x11
 # environment
 LC_PAPER = en_US.UTF-8
 # environment
+NO_AT_BRIDGE = 1
+# environment
 LC_IDENTIFICATION = en_US.UTF-8
 # environment
 QT_ACCESSIBILITY = 1
@@ -255,11 +259,11 @@ LC_ALL = C
 # environment
 GJS_DEBUG_TOPICS = JS ERROR;JS LOG
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/365e71da_4d1a_4306_8263_949b054a5438
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/d748aa8e_0ec3_4d69_9360_5cb83603e59b
 # automatic
 ^F = $(notdir $^)
 # environment
-GNOME_TERMINAL_SERVICE = :1.1420
+GNOME_TERMINAL_SERVICE = :1.123
 # default
 SUFFIXES := 
 # environment
@@ -278,15 +282,14 @@ GJS_DEBUG_OUTPUT = stderr
 LC_ADDRESS = en_US.UTF-8
 # environment
 LANG = C
- 
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 50034
+VSCODE_PID = 13955
 # environment
 NVM_RC_VERSION = 
 # variable set hash-table stats:
-# Load=136/1024=13%, Rehash=0, Collisions=20/161=12%
+# Load=138/1024=13%, Rehash=0, Collisions=22/163=13%
 
 # Pattern-specific Variable Values
 
@@ -294,9 +297,9 @@ NVM_RC_VERSION =
 
 # Directories
 
-# . (device 2055, inode 3155132): 17 files, no impossibilities.
+# . (device 2055, inode 3155132): 18 files, no impossibilities.
 
-# 17 files, no impossibilities in 1 directories.
+# 18 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -313,6 +316,7 @@ all:
 
 server:
 #  Implicit rule search has not been done.
+ 
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'makefile', line 2):
@@ -353,12 +357,12 @@ migrations:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 24 / storage = 214 B / avg = 8 B
-# current buf: size = 8162 B / used = 214 B / count = 24 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 25 / storage = 226 B / avg = 9 B
+# current buf: size = 8162 B / used = 226 B / count = 25 / avg = 9 B
 
-# strcache performance: lookups = 32 / hit rate = 25%
+# strcache performance: lookups = 33 / hit rate = 24%
 # hash-table stats:
-# Load=24/8192=0%, Rehash=0, Collisions=1/32=3%
-# Finished Make data base on Fri May 13 15:30:16 2022
+# Load=25/8192=0%, Rehash=0, Collisions=1/33=3%
+# Finished Make data base on Mon May 16 10:37:19 2022
 
  
